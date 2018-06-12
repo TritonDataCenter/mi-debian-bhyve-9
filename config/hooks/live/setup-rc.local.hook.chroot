@@ -13,7 +13,7 @@ rm -f /etc/rc.local
 echo "Installing Cloud Init"
 /usr/bin/wget --no-check-certificate https://us-east.manta.joyent.com/joyentsoln/public/images/bhyve/devel/debian/8/cloud-init_0.7.6~bzr976-2-joyent.1_all.deb
 /usr/bin/apt update
-/usr/bin/apt install python
+/usr/bin/apt -y install python
 /usr/bin/apt -yf install
 /usr/bin/dpkg -i cloud-init_0.7.6~bzr976-2-joyent.1_all.deb
 cat <<EOF > /etc/cloud/cloud.cfg.d/90_smartos.cfg
