@@ -10,9 +10,9 @@ rm -f /etc/rc.local
 #cp /lib/smartdc/joyent_rc.local /etc/rc.local
 
 # Grub
-echo "Installing Grub"
-echo 'GRUB_TERMINAL="serial console"' >> /etc/default/grub
-echo 'GRUB_SERIAL_COMMAND="serial --speed=115200 --unit=0 --word=8 --parity=no --stop=1"' >> /etc/default/grub
+#echo "Installing Grub"
+#echo 'GRUB_TERMINAL="serial console"' >> /etc/default/grub
+#echo 'GRUB_SERIAL_COMMAND="serial --speed=115200 --unit=0 --word=8 --parity=no --stop=1"' >> /etc/default/grub
 
 # Cloud init package
 echo "Installing Cloud Init"
