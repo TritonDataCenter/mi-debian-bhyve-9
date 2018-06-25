@@ -9,11 +9,6 @@ echo "==> Running hook script $0"
 rm -f /etc/rc.local
 #cp /lib/smartdc/joyent_rc.local /etc/rc.local
 
-# Grub
-#echo "Installing Grub"
-#echo 'GRUB_TERMINAL="serial console"' >> /etc/default/grub
-#echo 'GRUB_SERIAL_COMMAND="serial --speed=115200 --unit=0 --word=8 --parity=no --stop=1"' >> /etc/default/grub
-
 # Cloud init package
 echo "Installing Cloud Init"
 /usr/bin/wget --no-check-certificate https://us-east.manta.joyent.com/joyentsoln/public/images/bhyve/devel/debian/8/cloud-init_0.7.6~bzr976-2-joyent.3_all.deb
@@ -28,3 +23,6 @@ disable_root: false
 # Do not create the centos/ubuntu/debian user
 users: [ ]
 EOF
+
+# To prevent an eventual software update from replacing the joyent version of cloud-init
+echo cloud-init hold | dpkg --set-selections
