@@ -22,6 +22,9 @@ datasource_list: [ SmartOS ]
 disable_root: false
 # Do not create the centos/ubuntu/debian user
 users: [ ]
+
+mounts:
+- [ vdb, /data, auto, "defaults,nofail" ]
 EOF
 
 # To prevent an eventual software update from replacing the joyent version of cloud-init
